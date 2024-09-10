@@ -1,0 +1,126 @@
+﻿<ui:FluentWindow x:Class="wchart.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wchart"
+        mc:Ignorable="d"
+        Background="#212121"
+        Title="MainWindow" Height="700" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid
+            Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame 
+                x:Name="MainFrame" 
+                Grid.Column="2"/>
+
+            <StackPanel
+                x:Name="MainMenu"
+                Grid.Column="1"
+                Grid.Row="1"
+                VerticalAlignment="Top">
+                
+                <ui:CardExpander
+                    VerticalContentAlignment="Top"
+                    VerticalAlignment="Top"
+                    Header="Диаграмма документа">
+                    <ui:CardExpander.Content>
+                        <StackPanel
+                            Orientation="Vertical">
+                            <TextBlock 
+                                Grid.Row="0"
+                                TextWrapping="Wrap">
+                                <Run Text="Создайте диаграмму документа"/>
+                                <LineBreak/>
+                            </TextBlock>
+                            <Button
+                                x:Name="OpenButton"
+                                Grid.Row="1"
+                                Content="Открыть документ"
+                                Click="OpenDocumentCardExpanderButtonClicked"/>
+                        </StackPanel>
+                    </ui:CardExpander.Content>
+                </ui:CardExpander>
+
+                <ui:CardExpander 
+                    VerticalAlignment="Top"
+                    Grid.Row="2"
+                    Header="Настройки приложения"
+                    VerticalContentAlignment="Top">
+                    <ui:CardExpander.Content>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock 
+                                Grid.Row="0" 
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
+                                <Run Text="Если Word's Chart не может отнаружить Office, используйте этот раздел для настройки"/>
+                                <LineBreak/>
+                            </TextBlock>
+                            <Button
+                                Grid.Row="1"
+                                Content="Открыть"
+                                Click="OpenConfigWizardCardExpanderButtonClicked"/>
+                        </Grid>
+                    </ui:CardExpander.Content>
+                </ui:CardExpander>
+                <ui:CardExpander
+                    Grid.Row="1"
+                    VerticalAlignment="Top"
+                    Header="Настройка поиска">
+                    <ui:CardExpander.Content>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                TextWrapping="Wrap"
+                                Grid.Row="0">
+                                <Run Text="(Этот раздел находится в разработке). Если поиск по определенным заголовкам не нужен, смысл в этом разделе минимальный."/>
+                                <LineBreak/>
+                            </TextBlock>
+                            <Button
+                                Grid.Row="1"
+                                Content="Открыть"/>
+                            
+                        </Grid>
+                    </ui:CardExpander.Content>
+                </ui:CardExpander>
+
+                <ui:CardAction
+                    Click="MainCardActionClicked"
+                    Content="Главная"
+                    />
+                
+                <ui:CardAction
+                    Click="AboutCardActionClicked"
+                    Content="О программе"/>
+
+            </StackPanel>
+
+        </Grid>
+
+        <ui:TitleBar 
+            Title="Word Chart"  
+            Grid.Row="0"/>
+        
+
+    </Grid>
+</ui:FluentWindow>

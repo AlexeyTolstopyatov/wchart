@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Pages\area-graph_2103979 %281%29.png" />
+    <None Remove="Pages\icons8-microsoft-word-2019-240.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveCharts.NetCore" Version="0.9.8" />
+    <PackageReference Include="LiveCharts.Wpf.Core" Version="0.9.8" />
+    <PackageReference Include="ModernUICharts.WPF.NET6" Version="1.0.0" />
+    <PackageReference Include="WPF-UI" Version="3.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\wchart.Core\wchart.Core.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Pages\area-graph_2103979 (1).png" />
+    <Resource Include="Pages\icons8-microsoft-word-2019-240.png" />
+  </ItemGroup>
+
+</Project>
