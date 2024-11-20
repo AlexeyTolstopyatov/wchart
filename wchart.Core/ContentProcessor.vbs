@@ -12,7 +12,7 @@ Dim fso, file, strOutput, arrBuiltInStyles, paragraph
 Set objWord = CreateObject("Word.Application")
 objWord.Visible = True
 
-Set objDoc = objWord.Documents.Open("D:\Projects\cs\wchart\wchart.Core\s.docx") ' Замените на путь к вашему файлу
+Set objDoc = objWord.Documents.Open("D:\Projects\cs\wchart\wchart.Core\s.docx")
 Set fso = CreateObject("Scripting.FileSystemObject")
 Set file = fso.CreateTextFile("result.csv", True)
 
