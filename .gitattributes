@@ -1,7 +1,10 @@
 ###############################################################################
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
-* text=auto
+*.R diff=r
+*.R linguist-detectable=true
+*.csv diff=csv
+*.csv linguist-detectable=true
 
 ###############################################################################
 # Set default behavior for command prompt diff.
